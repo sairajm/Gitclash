@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
-import LoginPage from './views/LoginPage'
 import {Switch, Route} from 'react-router-dom';
-import {Tabs, Tab} from 'react-bootstrap';
 
+import LoginView from './views/LoginView'
+import Dashboard from './views/Dashboard'
 import './App.css';
 
 class App extends Component {
@@ -11,22 +11,13 @@ class App extends Component {
     this.state = {
     };
   }
-  getTabs() {
-    return (
-      <Tabs defaultActiveKey={1} animation={false} id="noanim-tab-example">
-        <Tab eventKey={1} title="Home">Home</Tab>
-        <Tab eventKey={2} title="Place Bets">Place Bets</Tab>
-        <Tab eventKey={3} title="Leaderboard">Leaderboard</Tab>
-      </Tabs>
-    )
-  }
-
+ 
   render() {
     return (
       <div className="App">
-        {this.getTabs()}
         <Switch>
-          <Route exact path="/" render={() => <LoginPage/>}/>
+          <Route exact path="/" render={() => <LoginView/>}/>
+          <Route exact path="/dashboard" render={() => <Dashboard/>}/>
         </Switch>
       </div>
     );

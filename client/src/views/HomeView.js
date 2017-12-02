@@ -9,14 +9,9 @@ class HomeView extends Component {
       this.renderCurrentBets = this.renderCurrentBets.bind(this);
       this.currentBetsWrapper = this.currentBetsWrapper.bind(this);
     }
-
-    render() {
-        const {userName} = this.props;
-        return (this.renderCurrentBets());
-    }
-
+    
     renderCurrentBets() {
-      fetch('url',{username: this.props.userName})
+      fetch('url', {username: this.props.userName})
         .then((response)=>{
           return response.json();
         })
@@ -34,7 +29,14 @@ class HomeView extends Component {
       });
     }
 
-
+    render() {
+        const {userName} = this.props;
+        return (
+          <div>
+            {this.renderCurrentBets()}
+          </div>
+        );
+    }
 }
 
 export default HomeView;
