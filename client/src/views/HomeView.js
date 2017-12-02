@@ -4,29 +4,15 @@ class HomeView extends Component {
     constructor(props) {
       super(props);
       this.state = {
+        currentBetsData: null
       }
 
       this.renderCurrentBets = this.renderCurrentBets.bind(this);
-      this.currentBetsWrapper = this.currentBetsWrapper.bind(this);
+      this.getCurrentBets = this.getCurrentBets.bind(this);
     }
     
-    renderCurrentBets() {
-     return fetch('url',{username: this.props.userName})
-        .then((response)=>{
-          return response.json();
-        })
-        .then((data)=>{
-          return this.currentBetsWrapper(data);
-        })
-        .catch((err)=>{
-          console.log('Ayyo puttukichu', err);
-        })
-    }
-
-    currentBetsWrapper(friends) {
-      return friends.map(friend => {
-        <UserDetails friend={friend} />
-      });
+    componentWillMount() {
+      this.getCurrentBets();
     }
 
     render() {
@@ -36,6 +22,27 @@ class HomeView extends Component {
             {this.renderCurrentBets()}
           </div>
         );
+    }
+
+    getCurrentBets() {
+      fetch('url',{username: this.props.userName})
+        .then((response)=>{
+          return response.json();
+        })
+        .then((data)=>{
+           this.setState({
+             currentBetsData: data
+           });
+        })
+        .catch((err)=>{
+          console.log('Ayyo puttukichu', err);
+        })
+    }
+
+    renderCurrentBets() {
+      return this.currentBetsData.map(friend => {
+        <UserDetails friend={friend} />
+      });
     }
 }
 
