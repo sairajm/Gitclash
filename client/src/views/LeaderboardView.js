@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import {Table} from 'react-bootstrap';
 
 class LeaderboardView extends Component {
     constructor(props) {
@@ -18,22 +19,24 @@ class LeaderboardView extends Component {
     }
 
     fetchLeaderboardData() {
-      fetch(url).then((response)=>{
-        response.json();
-      }).then((data) => {
-        if(data) {
-          this.setState({
-            leaderBoardData: data
-          });
-        }
-      }).catch((err)=>{
-        console.log('Ammadi puttukichu', err);
-      })
+      // fetch("url").then((response)=>{
+      //   response.json();
+      // }).then((data) => {
+      //   if(data) {
+      //     this.setState({
+      //       leaderBoardData: data
+      //     });
+      //   }
+      // }).catch((err)=>{
+      //   console.log('Ammadi puttukichu', err);
+      // })
+      return
     }
 
     renderLeaderboard() {
      const {leaderBoardData} = this.state;
-     return (leaderBoardData)? (<Table striped bordered condensed hover>
+     return (leaderBoardData)? (
+     <Table striped bordered condensed hover>
         <thead>
           <tr>
             <th>User</th>
@@ -47,12 +50,13 @@ class LeaderboardView extends Component {
     }
 
   loadLeaderboardData(data) {
-    return data.map(d => {
+    console.log(data)
+    return data.map((d) => (
       <tr>
-        <td>d.user</td>
-        <td>d.points</td>
+        <td>{d.user}</td>
+        <td>{d.points}</td>
       </tr>
-    });
+    ))
   }
 
 

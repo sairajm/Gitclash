@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import {Tabs, Tab} from 'react-bootstrap';
 import AddBetsForm from './AddBetsForm';
+import LeaderboardView from './LeaderboardView';
 
 class Dashboard extends Component {
     getTabs() {
@@ -10,7 +11,9 @@ class Dashboard extends Component {
             <Tab eventKey={2} title="Place Bets">
                 <AddBetsForm/>
             </Tab>
-            <Tab eventKey={3} title="Leaderboard">Leaderboard</Tab>
+            <Tab eventKey={3} title="Leaderboard">
+                <LeaderboardView/>
+            </Tab>
           </Tabs>
         )
     }
