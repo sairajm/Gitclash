@@ -1,6 +1,5 @@
 import React, {Component} from 'react';
 
-
 class UserDetails extends Component {
     constructor(props) {
       super(props);
@@ -8,7 +7,7 @@ class UserDetails extends Component {
       };
     }
     render() {
-        const {userName, bet, runningStatus} = this.props;
+        const {userName, bet, runningStatus} = this.props.friend;
         return(
             <div>
               <div>{userName}</div>
