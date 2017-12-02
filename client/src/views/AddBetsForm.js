@@ -2,6 +2,17 @@ import React, {Component} from 'react';
 import {Table} from 'react-bootstrap';
 
 class AddBetsForm extends Component {
+    renderUserRows() {
+        return(
+            <tr>
+              <td>Mark</td>
+              <td>
+                  <input type="text"></input>
+              </td>
+            </tr>
+        )
+    }
+
     render() {
         return(
             <Table striped bordered condensed hover>
@@ -11,6 +22,9 @@ class AddBetsForm extends Component {
                         <th>Bets</th>
                     </tr>
                 </thead>
+                <tbody>
+                    {this.renderUserRows()}
+                </tbody>
             </Table>
         )
     }

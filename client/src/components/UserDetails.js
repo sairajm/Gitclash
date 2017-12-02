@@ -7,10 +7,10 @@ class UserDetails extends Component {
       };
     }
     render() {
-        const {userName, bet, runningStatus} = this.props.friend;
+        const {uName, bet, runningStatus} = this.props.friend;
         return(
             <div>
-              <div>{userName}</div>
+              <div>{uName}</div>
               <div>{bet}</div>
               <div>{runningStatus}</div>
             </div>
