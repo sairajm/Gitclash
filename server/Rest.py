@@ -41,4 +41,4 @@ def create_user():
         cur.execute(insert, (username, 'dummy_auth_token', 0, 0, 1, 1))
         conn.commit()
 
-run(host='localhost', port=8080)
+run(host='localhost', port=80)
