@@ -4,7 +4,11 @@ class HomeView extends Component {
     constructor(props) {
       super(props);
       this.state = {
-        currentBetsData: null
+        currentBetsData: [
+         {user: 'mama', bet: 3, runningStatus: 'Lost'},
+         {user: 'poo', bet: 4, runningStatus: 'Undecided'},
+         {user: 'sai', bet: 5, runningStatus: 'Undecided'},
+         {user: 'kau', bet: 3, runningStatus: 'Won'}]
       }
 
       this.renderCurrentBets = this.renderCurrentBets.bind(this);
@@ -30,9 +34,11 @@ class HomeView extends Component {
           return response.json();
         })
         .then((data)=>{
-           this.setState({
-             currentBetsData: data
-           });
+          if(data){
+            this.setState({
+              currentBetsData: data
+            });
+          }
         })
         .catch((err)=>{
           console.log('Ayyo puttukichu', err);
