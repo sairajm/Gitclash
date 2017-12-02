@@ -16,7 +16,7 @@ class HomeView extends Component {
     }
 
     renderCurrentBets() {
-      fetch('url',{username: this.props.userName})
+     return fetch('url',{username: this.props.userName})
         .then((response)=>{
           return response.json();
         })
