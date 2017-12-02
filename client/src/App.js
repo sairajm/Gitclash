@@ -1,13 +1,17 @@
 import React, { Component } from 'react';
-import LoginView from './views/LoginView'
-import logo from './logo.svg';
+import LoginPage from './views/LoginPage'
+import {Switch, Route} from 'react-router-dom';
+
 import './App.css';
 
 class App extends Component {
   render() {
     return (
       <div className="App">
-        <LoginView/>
+      <Switch>
+        <Route exact path="/" render={() => <LoginPage/>}/>
+        <Route exact path="/" render={() => <Category/>}/>
+      </Switch>
       </div>
     );
   }
