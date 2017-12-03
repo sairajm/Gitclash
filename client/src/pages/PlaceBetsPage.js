@@ -5,7 +5,11 @@ class PlaceBets extends Component {
     constructor(props) {
       super(props);
       this.state = {
-        friendList:[{name: 'mama'}, {name: 'sai'}, {name: 'poo'}, {name: 'kau'}]
+        friendList:[{name: 'SpidySriram'},
+         {name: 'AnushaRajan'},
+         {name: 'SaiM'},
+         {name: 'RangarajKaushikSundar'},
+         {name: 'Sophie'}]
       };
       this.renderUserRows = this.renderUserRows.bind(this);
     }

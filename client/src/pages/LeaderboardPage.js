@@ -5,7 +5,11 @@ class LeaderboardPage extends Component {
     constructor(props) {
       super(props);
       this.state = {
-        leaderBoardData: [{user: 'mama', points: 50}, {user: 'poo', points: 45}, {user: 'sai', points: 40}, {user: 'kau', points: 20}]
+        leaderBoardData: [{name: 'SpidySriram', points: 100},
+         {name: 'AnushaRajan', points:95},
+         {name: 'SaiM', points: 80},
+         {name: 'RangarajKaushikSundar',  points: 75},
+         {name: 'Sophie', points: 75}]
       };
       this.fetchLeaderboardData = this.fetchLeaderboardData.bind(this);
     }

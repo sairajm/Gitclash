@@ -6,10 +6,16 @@ class HomePage extends Component {
       super(props);
       this.state = {
         currentBetsData: [
-         {name: 'mama', bet: 3, runningStatus: 'Lost'},
-         {name: 'poo', bet: 4, runningStatus: 'Undecided'},
-         {name: 'sai', bet: 5, runningStatus: 'Undecided'},
-         {name: 'kau', bet: 3, runningStatus: 'Won'}]
+         {name: 'SpidySriram', bet: 3, runningStatus: 'Lost'},
+         {name: 'AnushaRajan', bet: 4, runningStatus: 'Undecided'},
+         {name: 'SaiM', bet: 5, runningStatus: 'Undecided'},
+         {name: 'RangarajKaushik', bet: 3, runningStatus: 'Won'},
+         {name: 'Sophie', bet: 3, runningStatus: 'Won'}],
+
+         userInfo: {
+          userName: 'Sriram Poondi Chinappa',
+          points: 450
+         }
       }
 
       this.renderCurrentBets = this.renderCurrentBets.bind(this);
@@ -24,9 +30,20 @@ class HomePage extends Component {
         const {userName} = this.props;
         return (
           <div>
+            {this.displayUserDetails()}
             {this.renderCurrentBets()}
           </div>
         );
+    }
+
+    displayUserDetails() {
+      const {userInfo} = this.state;
+      return (
+        <div className='userDetails'>
+          <div className='userName'>{userInfo.userName} </div>
+          <div className='userPoints'>{userInfo.points} </div>
+        </div>
+      )
     }
 
     getCurrentBets() {
