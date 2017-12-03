@@ -1,6 +1,8 @@
 import React, {Component} from 'react';
 import UserDetails from '../components/UserDetails';
 
+import '../components/UserDetails.css';
+
 class HomePage extends Component {
     constructor(props) {
       super(props);
@@ -66,7 +68,7 @@ class HomePage extends Component {
     renderCurrentBets() {
       const {currentBetsData} = this.state;
       return currentBetsData.map((friend) => (
-        <UserDetails friend={friend} />
+        <UserDetails key={friend.name} friend={friend} />
       ));
     }
 }

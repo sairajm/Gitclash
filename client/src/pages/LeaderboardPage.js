@@ -1,6 +1,8 @@
 import React, {Component} from 'react';
 import {Table} from 'react-bootstrap';
 
+import './LeaderboardPage.css'
+
 class LeaderboardPage extends Component {
     constructor(props) {
       super(props);
@@ -40,25 +42,28 @@ class LeaderboardPage extends Component {
     renderLeaderboard() {
      const {leaderBoardData} = this.state;
      return (leaderBoardData)? (
-     <Table striped bordered condensed hover>
-        <thead>
-          <tr>
-            <th>User</th>
-            <th>Points</th>
-          </tr>
-        </thead>
-        <tbody>
-          {this.loadLeaderboardData(leaderBoardData)}
-        </tbody>
-      </Table>) : null;
+      <div className="leaderboardContainer">
+        <Table striped bordered condensed hover>
+            <thead>
+              <tr>
+                <th>User</th>
+                <th>Points</th>
+              </tr>
+            </thead>
+            <tbody>
+              {this.loadLeaderboardData(leaderBoardData)}
+            </tbody>
+          </Table>
+        </div>
+          ) : null;
     }
 
   loadLeaderboardData(data) {
     console.log(data)
     return data.map((d) => (
-      <tr>
-        <td key={d.user}>{d.user}</td>
-        <td key={d.user+d.points}>{d.points}</td>
+      <tr key={d.name}>
+        <td>{d.name}</td>
+        <td>{d.points}</td>
       </tr>
     ))
   }

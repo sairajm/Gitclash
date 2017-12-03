@@ -1,0 +1,28 @@
+.userCard {
+    display: block;
+}
+
+.userInfo {
+    display: block;
+    float: left;
+    width: 200px;
+    margin: 1.5em;
+}
+
+.statusLost {
+    color: #ff0000;
+    font-size: 1.2em;
+    font-weight: 400;
+}
+
+.statusUndecided {
+    color: #2a2a2a;
+    font-size: 1.2em;
+    font-weight: 400;
+}
+
+.statusWon {
+    color: #00ad02;
+    font-size: 1.2em;
+    font-weight: 400;
+}

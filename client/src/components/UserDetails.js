@@ -1,4 +1,7 @@
 import React, {Component} from 'react';
+import {Panel} from 'react-bootstrap';
+
+import './UserDetails.css';
 
 class UserDetails extends Component {
     constructor(props) {
@@ -10,10 +13,12 @@ class UserDetails extends Component {
         const {name, bet, runningStatus} = this.props.friend;
         console.log('hahaha', name, bet, runningStatus);
         return(
-            <div>
-              <div>{name}</div>
-              <div>{bet}</div>
-              <div>{runningStatus}</div>
+            <div className="userInfo">
+                <Panel header={name}>
+                    <div>{bet}</div>
+                    <hr/>
+                    <div className={`status${runningStatus}`}>{runningStatus}</div>
+                </Panel>
             </div>
         )
     }
