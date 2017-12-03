@@ -3,7 +3,6 @@ import { Button, Form, FormControl, FormGroup, Col, ControlLabel } from 'react-b
 import { Link } from 'react-router-dom';
  
 class LoginView extends Component {
-
     render() {
         return(
             <div>

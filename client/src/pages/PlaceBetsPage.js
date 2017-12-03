@@ -1,16 +1,24 @@
 import React, {Component} from 'react';
 import {Table} from 'react-bootstrap';
 
-class AddBetsForm extends Component {
+class PlaceBets extends Component {
+    constructor(props) {
+      super(props);
+      this.state = {
+        friendList:[{name: 'mama'}, {name: 'sai'}, {name: 'poo'}, {name: 'kau'}]
+      };
+      this.renderUserRows = this.renderUserRows.bind(this);
+    }
     renderUserRows() {
-        return(
+        const {friendList} = this.state;
+        return friendList.map((friend)=> (
             <tr>
-              <td>Mark</td>
+              <td>{friend.name}</td>
               <td>
-                  <input type="text"></input>
+                  <input type="number" step="1" min="0" max="7"></input>
               </td>
             </tr>
-        )
+        ));
     }
 
     render() {
@@ -30,4 +38,4 @@ class AddBetsForm extends Component {
     }
 }
 
-export default AddBetsForm;
+export default PlaceBets;

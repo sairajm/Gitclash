@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import {Table} from 'react-bootstrap';
 
-class LeaderboardView extends Component {
+class LeaderboardPage extends Component {
     constructor(props) {
       super(props);
       this.state = {
@@ -53,8 +53,8 @@ class LeaderboardView extends Component {
     console.log(data)
     return data.map((d) => (
       <tr>
-        <td>{d.user}</td>
-        <td>{d.points}</td>
+        <td key={d.user}>{d.user}</td>
+        <td key={d.user+d.points}>{d.points}</td>
       </tr>
     ))
   }
@@ -62,4 +62,4 @@ class LeaderboardView extends Component {
 
 }
 
-export default LeaderboardView;
+export default LeaderboardPage;
