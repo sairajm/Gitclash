@@ -57,8 +57,8 @@ class LeaderboardPage extends Component {
     console.log(data)
     return data.map((d) => (
       <tr>
-        <td key={d.user}>{d.user}</td>
-        <td key={d.user+d.points}>{d.points}</td>
+        <td key={d.name}>{d.name}</td>
+        <td key={d.name+d.points}>{d.points}</td>
       </tr>
     ))
   }
